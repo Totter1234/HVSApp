@@ -156,7 +156,7 @@ const buildingInfo = {
     en: "Administration",
     descDa: "Kursusadministration, reception og hjælp til deltagere.",
     descEn: "Course administration, reception and participant support.",
-    location: "Bygning 1 / Building 1",
+    location: "Bygning 1 · Ved hovedporten / Main gate",
     hoursDa: "Hverdage 07:30–16:00",
     hoursEn: "Weekdays 07:30–16:00",
   },
@@ -165,7 +165,7 @@ const buildingInfo = {
     descDa: "Fælles spisefaciliteter for alle kursister og instruktører. Husk adgangskort.",
     descEn:
       "Shared dining facilities for all course participants and instructors. Remember your access card.",
-    location: "Bygning 9 / Building 9",
+    location: "Bygning 4 · Messe / DFAC",
     hoursDa: "Morgen 06:30 | Frokost 12:00 | Aftensmad 18:00",
     hoursEn: "Breakfast 06:30 | Lunch 12:00 | Dinner 18:00",
   },
@@ -173,7 +173,7 @@ const buildingInfo = {
     en: "Accommodation",
     descDa: "Indkvartering i Barak A–D. Henvendelse ved depotet.",
     descEn: "Accommodation in Barracks A–D. Check in at the depot.",
-    location: "Barak A–D / Barracks A–D",
+    location: "Bygning 10–14A / Buildings 10–14A",
     hoursDa: "Døgnåbent",
     hoursEn: "Open 24 hours",
   },
@@ -181,7 +181,7 @@ const buildingInfo = {
     en: "Shooting range",
     descDa: "Afspærret skydeområde. Adgang kun med instruktør.",
     descEn: "Restricted shooting range. Instructor access only.",
-    location: "Område Nord / North area",
+    location: "Østområdet / Eastern training area",
     hoursDa: "Ifølge program",
     hoursEn: "According to schedule",
   },
@@ -189,7 +189,7 @@ const buildingInfo = {
     en: "Training ground",
     descDa: "Udendørs areal til praktisk træning og øvelser.",
     descEn: "Outdoor area for practical training and exercises.",
-    location: "Område Øst / East area",
+    location: "Idræts- og paradeplads / Sports & parade ground",
     hoursDa: "Ifølge program",
     hoursEn: "According to schedule",
   },
@@ -367,142 +367,186 @@ function CampusMap({
     },
   });
   return (
-    <svg className="campus-map" viewBox="0 0 350 370" aria-label="Campus map">
-      <rect width="350" height="370" fill="#182310" />
+    <svg className="campus-map" viewBox="0 0 350 360" aria-label="Campus map">
+      <rect width="350" height="360" fill="#10180c" />
       <path
-        className="map-grid"
-        d="M8 20h334M8 70h334M8 120h334M8 170h334M8 220h334M8 270h334M8 320h334M50 8v354M100 8v354M150 8v354M200 8v354M250 8v354M300 8v354"
+        className="campus-ground"
+        d="M8 40Q30 17 75 23L112 10Q142 4 163 22Q208 9 235 31Q289 29 327 65Q347 91 341 129Q356 163 337 192Q352 229 331 256Q344 300 308 326Q270 346 231 336Q194 354 157 341Q114 357 79 334Q33 332 22 296Q-2 270 13 231Q-4 196 14 164Q-2 127 18 98Q3 69 8 40Z"
       />
-      <path className="road" d="M-5 191h360" />
-      <path className="road-edge" d="M-5 174h360M-5 208h360" />
-      <text x="10" y="188" className="road-label">
+      <path
+        className="map-lake"
+        d="M0 16Q41-2 78 9Q111-7 145 9Q156 31 139 51Q111 68 81 56Q45 69 11 53Q-4 39 0 16Z"
+      />
+      <path
+        className="tree-belt"
+        d="M19 74Q55 56 98 70M175 38Q228 25 278 54M272 178Q321 160 334 126M33 278Q82 300 126 276M111 322Q158 300 197 322"
+      />
+
+      <g className="site-roads">
+        <path d="M-8 343 45 286 102 250 168 251 229 281 288 306 355 294" />
+        <path d="M45 286 34 224 57 174 94 135 137 102 184 75 231 52" />
+        <path d="M57 174 112 195 170 175 216 139 290 128 343 145" />
+        <path d="M102 250 128 215 170 175" />
+        <path d="M168 251 193 214 254 190 329 192" />
+        <path d="M229 281 254 238 306 219 329 192" />
+        <path d="M94 135 56 109 25 119" />
+      </g>
+      <text x="9" y="333" className="road-label" transform="rotate(-40 9 333)">
         HOVEDVEJ
       </text>
 
+      <g className="map-building">
+        <rect x="44" y="91" width="47" height="29" />
+        <text x="67.5" y="102">
+          DHGS
+        </text>
+        <text x="67.5" y="113">
+          5 / 5A / 39
+        </text>
+      </g>
       <g {...interactive("Administration")}>
-        <rect x="16" y="25" width="88" height="45" />
-        <text x="60" y="45">
-          ADMINI-
+        <rect x="18" y="263" width="70" height="36" />
+        <text x="53" y="278">
+          LEJRKONTOR
         </text>
-        <text x="60" y="58">
-          STRATION
-        </text>
-      </g>
-      <g className="map-building">
-        <rect x="117" y="25" width="101" height="45" />
-        <text x="168" y="45">
-          KLASSE-
-        </text>
-        <text x="168" y="58">
-          VÆRELSER
+        <text x="53" y="290">
+          BYGNING 1
         </text>
       </g>
-      <g className="map-building">
-        <path d="M230 27h102v43H230Z" />
-        <text x="281" y="52">
-          AUDITORIUM
-        </text>
-      </g>
-      <g className="map-building">
-        <rect x="16" y="88" width="91" height="42" />
-        <text x="62" y="105">
-          DEPOT /
-        </text>
-        <text x="62" y="118">
-          MATERIEL
-        </text>
-      </g>
+
       {[
-        [119, "A"],
-        [176, "B"],
-        [233, "C"],
-        [290, "D"],
-      ].map(([x, letter]) => (
+        [123, 63, "A", "10"],
+        [174, 43, "B", "11"],
+        [226, 34, "C", "12"],
+        [211, 112, "D", "13"],
+      ].map(([x, y, letter, number]) => (
         <g
           className={`map-building ${selected === "Indkvartering" ? "selected" : ""} interactive`}
           onClick={() => onSelect("Indkvartering")}
           key={String(letter)}
         >
-          <rect x={Number(x)} y="89" width="46" height="67" />
-          <text x={Number(x) + 23} y="106">{`BARAK ${letter}`}</text>
-          {[0, 1, 2].map((w) => (
+          <rect x={Number(x)} y={Number(y)} width="38" height="44" />
+          <text x={Number(x) + 19} y={Number(y) + 13}>{`BARAK ${letter}`}</text>
+          <text x={Number(x) + 19} y={Number(y) + 24}>{`BYG. ${number}`}</text>
+          {[0, 1].map((w) => (
             <rect
               className="window"
-              x={Number(x) + 7 + w * 12}
-              y="137"
+              x={Number(x) + 9 + w * 13}
+              y={Number(y) + 32}
               width="7"
-              height="7"
+              height="6"
               key={w}
             />
           ))}
         </g>
       ))}
 
-      <g {...interactive("Spisemesse")}>
-        <rect x="17" y="226" width="106" height="55" />
-        <text x="70" y="257">
-          SPISEMESSE
+      <g className="map-building">
+        <rect x="95" y="126" width="69" height="38" />
+        <text x="129.5" y="141">
+          KLASSE-
         </text>
-      </g>
-      <g {...interactive("Sanitær/Bad")}>
-        <rect x="17" y="297" width="106" height="48" />
-        <text x="70" y="318">
-          SANITÆR
-        </text>
-        <text x="70" y="332">
-          / BAD
+        <text x="129.5" y="153">
+          VÆR. 2 / 40
         </text>
       </g>
       <g className="map-building">
-        <rect x="136" y="226" width="66" height="55" />
-        <text x="169" y="248">
-          SYGE-
+        <rect x="62" y="132" width="29" height="39" />
+        <text x="76.5" y="146">
+          KONTOR
         </text>
-        <text x="169" y="262">
-          STUE
+        <text x="76.5" y="158">
+          8
         </text>
-        <path className="cross" d="M164 267h10M169 262v10" />
       </g>
       <g className="map-building">
-        <rect x="136" y="297" width="66" height="48" />
-        <text x="169" y="325">
-          KANTINE
+        <rect x="165" y="116" width="40" height="38" />
+        <text x="185" y="132">
+          AUDITORIUM
+        </text>
+        <text x="185" y="144">
+          14
         </text>
       </g>
+      <g className="map-building">
+        <rect x="259" y="225" width="64" height="37" />
+        <text x="291" y="247">
+          VÆRKSTED
+        </text>
+      </g>
+
       <g {...interactive("Øvelsesplads")}>
-        <rect x="216" y="226" width="116" height="119" />
-        <path className="training-lines" d="M225 238h98v95h-98ZM234 247l80 77M314 247l-80 77" />
-        <text x="274" y="282">
+        <rect x="262" y="72" width="70" height="67" />
+        <path className="training-lines" d="M269 80h56v50h-56ZM275 86l44 38M319 86l-44 38" />
+        <text x="297" y="104">
           ØVELSES-
         </text>
-        <text x="274" y="297">
+        <text x="297" y="116">
           PLADS
         </text>
       </g>
+
+      <g className="map-building">
+        <rect x="169" y="179" width="52" height="34" />
+        <text x="195" y="192">
+          SYGE-
+        </text>
+        <text x="195" y="204">
+          STUE
+        </text>
+        <path className="cross" d="M211 184h7M214.5 180.5v7" />
+      </g>
+      <g className="map-building">
+        <rect x="214" y="273" width="58" height="36" />
+        <text x="243" y="295">
+          KANTINE
+        </text>
+      </g>
+      <g {...interactive("Spisemesse")}>
+        <rect x="89" y="181" width="72" height="46" />
+        <text x="125" y="200">
+          SPISEMESSE
+        </text>
+        <text x="125" y="214">
+          BYG. 4 / DFAC
+        </text>
+      </g>
+      <g {...interactive("Sanitær/Bad")}>
+        <rect x="165" y="223" width="58" height="38" />
+        <text x="194" y="238">
+          SANITÆR
+        </text>
+        <text x="194" y="250">
+          / BAD
+        </text>
+      </g>
       <g {...interactive("Skydebane")}>
-        <path className="range" d="M16 145h91v23H16Z" />
-        <text x="61" y="160">
+        <path className="range" d="M284 164h60v26H284Z" />
+        <text x="314" y="180">
           SKYDEBANE
         </text>
-        {[76, 86, 96].map((x) => (
-          <circle className="target" cx={x} cy="151" r="3" key={x} />
+        {[322, 331, 340].map((x) => (
+          <circle className="target" cx={x} cy="171" r="3" key={x} />
         ))}
       </g>
 
       <g className="flag-square">
-        <rect x="145" y="167" width="62" height="47" />
-        <circle cx="176" cy="190" r="6" />
-        <path d="M176 184v-11l12 4-12 4" />
-        <text x="176" y="207">
-          FLAGPLADSEN
+        <rect x="225" y="175" width="49" height="39" />
+        <circle cx="249.5" cy="194" r="5" />
+        <path d="M249.5 189v-10l10 4-10 3" />
+        <text x="249.5" y="209">
+          FLAGPLADS
         </text>
       </g>
-      <g className="compass" transform="translate(318 35)">
+      <text x="15" y="312" className="map-gate-label">
+        ← HOVEDPORT / MAIN GATE
+      </text>
+      <g className="compass" transform="translate(310 36)">
         <circle r="17" />
         <path d="M0-14 4 1 0-2-4 1Z" />
         <text y="-20">N</text>
       </g>
-      <g className="scale" transform="translate(250 359)">
+      <g className="scale" transform="translate(250 348)">
         <path d="M0 0h70M0-4v8M35-4v8M70-4v8" />
         <text x="35" y="-7">
           50 M

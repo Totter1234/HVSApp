@@ -228,24 +228,37 @@
   height: auto;
 }
 
-.map-grid {
-  fill: none;
-  stroke: #334326;
-  stroke-width: 0.45;
-  opacity: 0.5;
+.campus-ground {
+  fill: #1e2c15;
+  stroke: #3d5229;
+  stroke-width: 2;
 }
 
-.road {
-  fill: none;
-  stroke: #465039;
-  stroke-width: 32;
+.map-lake {
+  fill: #244e57;
+  stroke: #3c6d72;
+  stroke-width: 1.5;
 }
 
-.road-edge {
+.tree-belt {
   fill: none;
+  stroke: #304922;
+  stroke-width: 17;
+  stroke-linecap: round;
+  stroke-dasharray: 1 7;
+}
+
+.site-roads path {
+  fill: none;
+  stroke: #56604b;
+  stroke-width: 9;
+  stroke-linecap: square;
+  stroke-linejoin: bevel;
+}
+
+.site-roads path::after {
   stroke: #68705b;
   stroke-width: 1;
-  stroke-dasharray: 7 5;
 }
 
 .road-label {
@@ -254,6 +267,14 @@
   font-size: 7px;
   font-weight: 700;
   letter-spacing: 2px;
+}
+
+.map-gate-label {
+  fill: #c4b48a;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
 }
 
 .map-building {
