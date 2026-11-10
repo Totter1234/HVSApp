@@ -1,0 +1,10 @@
+{
+  "description": "A mobile information hub for Danish Home Guard School participants and instructors, with campus maps, course schedules, and important announcements.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
